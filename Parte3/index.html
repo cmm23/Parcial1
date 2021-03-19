@@ -13,8 +13,12 @@ let nombres  = ['Jorge','Isabel','Juan','Pedro','Karina','Jose','Arturo','Rogeli
 /*
 ### F1 Crea una funcion llamada mayusculas que reciba como parámetro un arreglo y convierta todos los nombres a mayusula y los escriba en la consola
 */
-
-// CREA TU FUNCION mayusculas aqui:
+function mayusculas(arr){
+  for(var i=0; i<arr.length; i++){
+    var s = arr[i].toUpperCase();
+    console.log(s);
+  }
+}
 
 
 
@@ -22,14 +26,31 @@ let nombres  = ['Jorge','Isabel','Juan','Pedro','Karina','Jose','Arturo','Rogeli
 ### F2 Crea una funcion llamada numVocales que reciba como parámetro un arreglo y cuente el numero de vocales de cada elemento y escriba en consola "datos: tiene [x] vocales , para cada elemento del arreglo" 
 */
 
-// CREA TU FUNCION numVocales aqui:
+function numVocales(arr){
+    var vocales = 0;
+    for(var i=0; i<arr.length; i++){
+      if(arr[i] == 'a' || arr[i] == 'e' || arr[i] == 'i' || arr[i] == 'o' || arr[i] == 'u'){
+        vocales++;
+      }
+      else if(arr[i] == 'A' || arr[i] == 'E' || arr[i]== 'I' || arr[i] == 'O' || arr[i] == 'U'){
+        vocales++;
+      }
+    }
+    console.log(`${arr}: tiene ${vocales} vocales`);
+}
+
 
 
 /*
 ### F3 Crea una funcion llamada numVocalesArr que reciba un arreglo y mande llamar a la funcion numVocales para que escriba la longitud de cada elemento del arreglo." 
 */
 
-// CREA TU FUNCION numVocalesArr aqui:
+function numVocalesArr(arr){
+  for(var i=0; i<arr.length; i++){
+    numVocales(arr[i]);
+  }
+}
+
 
 
 
@@ -44,10 +65,26 @@ A) Define un objeto tipo "Perro" que reciba 3 parametros
 2) Color
 3) Raza
 
-
 B) Crea 3 objectos  con diferentes valores
 
 C) Con un console.log escribe el nombre del primer objeto, el color del segundo, y la raza del tercero. Lo puedes hacer en una sola línea o en 3 lineas aparte. 
+*/
+
+function Perro(nombre, color, raza){
+  this.nombre = nombre;
+  this.color = color;
+  this.raza = raza;
+}
+
+var perro1 = new Perro ('Zeus', 'Dorado', 'Golden Retriever');
+var perro2 = new Perro ('Mia', 'Negro', 'French Poodle');
+var perro3 = new Perro ('Dona', 'Gris', 'Schnautzer');
+
+console.log(perro1.nombre);
+console.log(perro2.color);
+console.log(perro3.raza);
+
+/*
 
 
 *****BONUS****
@@ -74,13 +111,13 @@ Deberia escribir en consola
  ***/
 
 // F1
-
+mayusculas(nombres);
 
 // F2
-
+numVocales('Carolina');
 
 // F3
-
+numVocalesArr(nombres);
 
 
 
